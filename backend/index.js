@@ -41,7 +41,7 @@ app.post('/insert', (req, res) => {
 
 app.get('/deletar/:id', (req, res) => {
 	User.destroy({where: {'id': req.params.id}}).then(() => {
-		res.json({mensagem: 'Excluído com sucesso'});
+		res.render('Confirm');
 	}).catch((err) => {
 		res.json({mensagem: `Cadastro não excluído. Verifique. Erro: ${err}`});
 	});
