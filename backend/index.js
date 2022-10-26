@@ -2,7 +2,6 @@ const express = require('express');
 const app = express();
 const Handlebars = require('handlebars');
 const handlebars = require('express-handlebars');
-const bodyParser = require('body-parser');
 const { allowInsecurePrototypeAccess } = require('@handlebars/allow-prototype-access');
 const User = require('./models/User.js');
 
@@ -12,12 +11,12 @@ app.engine('handlebars', handlebars.engine({
 }));
 app.set('view engine', 'handlebars');
 
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
+app.use(express.urlencoded({ extended: false }));
+app.use(express.json());
 
 
 app.get('/', (req, res) => {
-	User.findAll({ odrder: [['id', 'asc']] }).then((users) => {
+	User.findAll({ order: [['id', 'asc']] }).then((users) => {
 		res.render('Home',{ users: users });
 	});
 });
