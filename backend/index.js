@@ -15,14 +15,16 @@ app.set('view engine', 'handlebars');
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
+
 app.get('/', (req, res) => {
-	res.render('form');
+	User.findAll({ odrder: [['id', 'asc']] }).then((users) => {
+		res.render('Home',{ users: users });
+	});
 });
 
-app.get('/user', (req, res) => {
-	User.findAll({ odrder: [['id', 'asc']] }).then((users) => {
-		res.json({ users: users });
-	});
+
+app.get('/cad', (req, res) => {
+	res.render('form');
 });
 
 app.post('/insert', (req, res) => {
@@ -32,7 +34,7 @@ app.post('/insert', (req, res) => {
 		idade: req.body.idade
 	}).then(() => {
 		res.json('Cadastro realizado com sucesso');
-	}).catch(function (err) {
+	}).catch((err) => {
 		res.json(`Cadastro não finalizado. Verifique. Erro: ${err}`);
 	});
 });
