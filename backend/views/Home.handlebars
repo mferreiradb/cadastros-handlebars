@@ -1,21 +1,23 @@
-{{#each users}}
-    <div class="tabela">
-        <table>
-            <tr>
-                <th>ID</th>
-                <th>Nome</th>
-                <th>Idade</th>
-                <th>Email</th>
-                <th>Data Cadastro</th>
-            </tr>
-
-            <tr>
-                <td>{{id}}</td>
-                <td>{{nome}}</td>
-                <td>{{idade}}</td>
-                <td>{{email}}</td>
-                <td>{{createdAt}}</td>
-            </tr>
-        </table>
-    </div>
-{{/each}}
+<main>
+    {{#each users}}
+        <div class="tabela">
+            <table>
+                <tr class="linha">
+                    <th>ID</th>
+                    <th>Nome</th>
+                    <th>Idade</th>
+                    <th>Email</th>
+                    <th>Data Cadastro</th>
+                </tr>
+    
+                <tr class="linha">
+                    <td>{{id}}</td>
+                    <td>{{nome}}</td>
+                    <td>{{idade}}</td>
+                    <td>{{email}}</td>
+                    <td>{{createdAt}}</td>
+                </tr>
+            </table>
+        </div>
+    {{/each}}
+</main>

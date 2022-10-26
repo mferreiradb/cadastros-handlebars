@@ -7,14 +7,6 @@
     <title>CRUD</title>
     <style>
         .tabela {
-            height: 90vh;
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-        table {
             background-color: #D9D6D2;
             width: 50%;
             display: flex;
@@ -25,16 +17,24 @@
             border-radius: 10px;
             text-align: center;
         }
-        th, td {
+        .linha {
+            border-left: 1px solid black;
+            color: #fff;
+        }
+        table {
+            border: black 1px solid;
+            background-color: #450c79;
+            padding: 50px;
+            border-radius: 10px;
+        }
+        td {
             padding: 10px;
             text-align: center;
-            border-top: black 1px solid;
-            border-left: black 1px solid;
-            border-right: black 1px solid;
         }
         body {
             background-color: black;
-            color: black;
+            color: #fff;
+            
         }
         .form {
             background-color: #D9D6D2;
