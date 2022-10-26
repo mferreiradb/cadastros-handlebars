@@ -33,7 +33,7 @@ app.post('/insert', (req, res) => {
 		email: req.body.email,
 		idade: req.body.idade
 	}).then(() => {
-		res.json('Cadastro realizado com sucesso');
+		res.redirect('/');
 	}).catch((err) => {
 		res.json(`Cadastro não finalizado. Verifique. Erro: ${err}`);
 	});
