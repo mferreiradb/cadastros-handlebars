@@ -27,14 +27,23 @@ app.get('/cad', (req, res) => {
 });
 
 app.post('/insert', (req, res) => {
+	const {nome, idade, email} = req.body;
 	User.create({
-		nome: req.body.nome,
-		email: req.body.email,
-		idade: req.body.idade
+		nome,
+		idade,
+		email
 	}).then(() => {
 		res.redirect('/');
 	}).catch((err) => {
-		res.json(`Cadastro não finalizado. Verifique. Erro: ${err}`);
+		res.json({mensagem: `Cadastro não finalizado. Verifique. Erro: ${err}`});
+	});
+});
+
+app.get('/deletar/:id', (req, res) => {
+	User.destroy({where: {'id': req.params.id}}).then(() => {
+		res.json({mensagem: 'Excluído com sucesso'});
+	}).catch((err) => {
+		res.json({mensagem: `Cadastro não excluído. Verifique. Erro: ${err}`});
 	});
 });
 
