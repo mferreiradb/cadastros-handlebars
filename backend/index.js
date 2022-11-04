@@ -4,10 +4,10 @@ const Handlebars = require('handlebars');
 const handlebars = require('express-handlebars');
 const { allowInsecurePrototypeAccess } = require('@handlebars/allow-prototype-access');
 
-const Insert = require('./Repositorys/Insert.js');
-const Form = require('./Repositorys/Form.js');
-const Delete = require('./Repositorys/Delete.js');
-const Home = require('./Repositorys/Home.js');
+const Insert = require('./Repositories/Insert.js');
+const Form = require('./Repositories/Form.js');
+const Delete = require('./Repositories/Delete.js');
+const Home = require('./Repositories/Home.js');
 
 app.engine('handlebars', handlebars.engine({
 	defaultLayout: 'main',
