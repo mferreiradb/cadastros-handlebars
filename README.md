@@ -1,2 +1,2 @@
 # crud-handlebars
-Projeto de CRUD utilizando Handlebars, Express, Sequelize e Mysql
+Projeto de Tela de Cadastros utilizando Handlebars, Express, Sequelize e Mysql
